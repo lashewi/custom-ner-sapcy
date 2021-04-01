@@ -25,8 +25,6 @@ nat = Natural Phenomenon
 with open ('spacy_dataset', 'rb') as fp:
     NER_TRAIN_TEST_DATASET = pickle.load(fp)
 
-random.shuffle(NER_TRAIN_TEST_DATASET)
-
 TRAIN_DATA = NER_TRAIN_TEST_DATASET[:38300]
 TEST_DATA = NER_TRAIN_TEST_DATASET[38300:]
 
@@ -50,15 +48,18 @@ def main(model=None, new_model_name='new_model', output_dir=None, n_iter=10):
     else:
         ner = nlp.get_pipe('ner')
 
+
     for i in LABEL:
         ner.add_label(i)   
+    
     
     if model is None:
         optimizer = nlp.begin_training()
     else:
         optimizer = nlp.entity.create_optimizer()
 
-    other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'ner']
+    pipe_exceptions = ["ner", "trf_wordpiecer", "trf_tok2vec"]
+    other_pipes = [pipe for pipe in nlp.pipe_names if pipe not in pipe_exceptions]
     with nlp.disable_pipes(*other_pipes):  
         for itn in range(n_iter):
             random.shuffle(TRAIN_DATA)
