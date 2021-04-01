@@ -83,7 +83,7 @@ def main(model=None, new_model_name='new_model', output_dir=None, n_iter=10):
         nlp.to_disk(output_dir)
         print("Saved model to", output_dir)
 
-        test_text = 'In year 2015 Wisumperuma completed secodary educaiton in Sri Lanka'
+        test_text = 'In year 2015 Wisumperuma completed secodary education in Sri Lanka'
         print("Loading model from", output_dir)
         print("Testing sentence: ", test_text)
         nlp2 = spacy.load(output_dir)
