@@ -1,0 +1,29 @@
+2021-04-06 15:40:15,669 INFO    MainThread:1771 [wandb_setup.py:_flush():69] setting env: {}
+2021-04-06 15:40:15,669 WARNING MainThread:1771 [wandb_setup.py:_flush():69] could not save program above cwd: /opt/conda/lib/python3.7/site-packages/spacy/__main__.py
+2021-04-06 15:40:15,669 INFO    MainThread:1771 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-04-06 15:40:15,669 INFO    MainThread:1771 [wandb_init.py:_log_setup():336] Logging user logs to /home/lashewi/custom-ner-spacy/wandb/run-20210406_154015-2tzmchrc/logs/debug.log
+2021-04-06 15:40:15,669 INFO    MainThread:1771 [wandb_init.py:_log_setup():337] Logging internal logs to /home/lashewi/custom-ner-spacy/wandb/run-20210406_154015-2tzmchrc/logs/debug-internal.log
+2021-04-06 15:40:15,669 INFO    MainThread:1771 [wandb_init.py:init():369] calling init triggers
+2021-04-06 15:40:15,669 INFO    MainThread:1771 [wandb_init.py:init():376] wandb.init called with sweep_config: {}
+config: {'components': {'ner': {'factory': 'ner', 'moves': None, 'update_with_oracle_cut_size': 100, 'model': {'@architectures': 'spacy.TransitionBasedParser.v2', 'state_type': 'ner', 'extra_state_tokens': False, 'hidden_width': 64, 'maxout_pieces': 2, 'use_upper': True, 'no': None, 'tok2vec': {'@architectures': 'spacy.Tok2VecListener.v1', 'width': 256, 'upstream': '*'}}}, 'tok2vec': {'factory': 'tok2vec', 'model': {'@architectures': 'spacy.Tok2Vec.v2', 'embed': {'@architectures': 'spacy.MultiHashEmbed.v1', 'width': 256, 'attrs': ['ORTH', 'SHAPE'], 'rows': [5000, 2500], 'include_static_vectors': True}, 'encode': {'@architectures': 'spacy.MaxoutWindowEncoder.v2', 'width': 256, 'depth': 8, 'window_size': 1, 'maxout_pieces': 3}}}}, 'corpora': {'dev': {'@readers': 'spacy.Corpus.v1', 'path': 'test.spacy', 'max_length': 0, 'gold_preproc': False, 'limit': 0, 'augmenter': None}, 'train': {'@readers': 'spacy.Corpus.v1', 'path': 'train.spacy', 'max_length': 2000, 'gold_preproc': False, 'limit': 0, 'augmenter': None}}, 'initialize': {'vectors': 'en_core_web_sm', 'init_tok2vec': None, 'vocab_data': None, 'lookups': None, 'before_init': None, 'after_init': None}, 'nlp': {'lang': 'en', 'pipeline': ['tok2vec', 'ner'], 'batch_size': 1000, 'disabled': [], 'before_creation': None, 'after_creation': None, 'after_pipeline_creation': None, 'tokenizer': {'@tokenizers': 'spacy.Tokenizer.v1'}}, 'paths': {'train': 'train.spacy', 'dev': 'test.spacy', 'vectors': None, 'init_tok2vec': None}, 'system': {'gpu_allocator': None, 'seed': 0}, 'training': {'dev_corpus': 'corpora.dev', 'train_corpus': 'corpora.train', 'seed': 0, 'gpu_allocator': None, 'dropout': 0.1, 'accumulate_gradient': 1, 'patience': 1600, 'max_epochs': 10, 'max_steps': 20000, 'eval_frequency': 200, 'frozen_components': [], 'before_to_disk': None, 'batcher': {'@batchers': 'spacy.batch_by_words.v1', 'discard_oversize': False, 'tolerance': 0.2, 'get_length': None, 'size': {'@schedules': 'compounding.v1', 'start': 100, 'stop': 1000, 'compound': 1.001, 't': 0.0}}, 'logger': {'@loggers': 'spacy.WandbLogger.v1', 'project_name': 'spacy-ner', 'remove_config_values': []}, 'optimizer': {'@optimizers': 'Adam.v1', 'beta1': 0.9, 'beta2': 0.999, 'l2_is_weight_decay': True, 'l2': 0.01, 'grad_clip': 1.0, 'use_averages': False, 'eps': 1e-08, 'learn_rate': 0.001}, 'score_weights': {'ents_per_type': None, 'ents_f': 1.0, 'ents_p': 0.0, 'ents_r': 0.0}}}
+2021-04-06 15:40:15,669 INFO    MainThread:1771 [wandb_init.py:init():418] starting backend
+2021-04-06 15:40:15,669 INFO    MainThread:1771 [backend.py:_multiprocessing_setup():71] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2021-04-06 15:40:15,679 INFO    MainThread:1771 [backend.py:ensure_launched():123] starting backend process...
+2021-04-06 15:40:15,686 INFO    MainThread:1771 [backend.py:ensure_launched():128] started backend process with pid: 1805
+2021-04-06 15:40:15,687 INFO    MainThread:1771 [wandb_init.py:init():423] backend started and connected
+2021-04-06 15:40:15,689 INFO    MainThread:1771 [wandb_init.py:init():463] updated telemetry
+2021-04-06 15:40:15,689 INFO    MainThread:1771 [wandb_init.py:init():482] communicating current version
+2021-04-06 15:40:16,409 INFO    MainThread:1771 [wandb_init.py:init():487] got version response upgrade_message: "wandb version 0.10.25 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2021-04-06 15:40:16,409 INFO    MainThread:1771 [wandb_init.py:init():495] communicating run to backend with 30 second timeout
+2021-04-06 15:40:16,540 INFO    MainThread:1771 [wandb_init.py:init():520] starting run threads in backend
+2021-04-06 15:40:17,783 INFO    MainThread:1771 [wandb_run.py:_console_start():1507] atexit reg
+2021-04-06 15:40:17,783 INFO    MainThread:1771 [wandb_run.py:_redirect():1370] redirect: SettingsConsole.REDIRECT
+2021-04-06 15:40:17,784 INFO    MainThread:1771 [wandb_run.py:_redirect():1375] Redirecting console.
+2021-04-06 15:40:17,784 INFO    MainThread:1771 [redirect.py:install():213] install start
+2021-04-06 15:40:17,784 INFO    MainThread:1771 [redirect.py:install():228] install stop
+2021-04-06 15:40:17,784 INFO    MainThread:1771 [redirect.py:install():213] install start
+2021-04-06 15:40:17,784 INFO    MainThread:1771 [redirect.py:install():228] install stop
+2021-04-06 15:40:17,784 INFO    MainThread:1771 [wandb_run.py:_redirect():1421] Redirects installed.
+2021-04-06 15:40:17,785 INFO    MainThread:1771 [wandb_init.py:init():544] run started, returning control to user process
+2021-04-06 17:16:21,958 INFO    MainThread:1771 [wandb_run.py:finish():1166] finishing run lashewi/spacy-ner/2tzmchrc
